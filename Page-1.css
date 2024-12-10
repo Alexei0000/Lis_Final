@@ -1,0 +1,198 @@
+body {
+  font-family: "Noto Serif TC", serif;
+}
+
+.u-section-1 .u-sheet-1 {
+  min-height: 400px;
+  font-family: "Noto Serif TC", serif;
+}
+
+.u-section-1 .u-text-1 {
+  font-size: 4.5rem;
+  margin: 18px auto 0 -175px;
+  font-family: "Noto Serif TC", serif;
+}
+
+.u-section-1 .u-list-1 {
+  width: 415px;
+  margin: 31px auto 0 251px;
+  font-family: "Noto Serif TC", serif;
+}
+
+.u-section-1 .u-repeater-1 {
+  grid-auto-columns: calc(25% - 3.75px);
+  grid-template-columns: repeat(4, calc(25% - 3.75px));
+  min-height: 57px;
+  grid-gap: 5px;
+  font-family: "Noto Serif TC", serif;
+}
+
+.u-section-1 .u-list-item-1 {
+  --radius: 20px;
+  font-family: "Noto Serif TC", serif;
+}
+
+.u-section-1 .u-container-layout-1 {
+  padding: 10px 10px 2px;
+  font-family: "Noto Serif TC", serif;
+}
+
+.u-section-1 .u-btn-1 {
+  --radius: 20px;
+  background-image: none;
+  margin: 0 auto;
+  font-family: "Noto Serif TC", serif;
+}
+
+.u-section-1 .u-list-item-2 {
+  --radius: 20px;
+}
+
+.u-section-1 .u-container-layout-2 {
+  padding: 10px 10px 2px;
+}
+
+.u-section-1 .u-btn-2 {
+  --radius: 20px;
+  background-image: none;
+  margin: 0 auto;
+}
+
+.u-section-1 .u-list-item-3 {
+  --radius: 20px;
+}
+
+.u-section-1 .u-container-layout-3 {
+  padding: 10px 10px 2px;
+}
+
+.u-section-1 .u-btn-3 {
+  --radius: 20px;
+  background-image: none;
+  margin: 0 auto;
+}
+
+.u-section-1 .u-list-item-4 {
+  --radius: 20px;
+}
+
+.u-section-1 .u-container-layout-4 {
+  padding: 10px 10px 2px;
+}
+
+.u-section-1 .u-btn-4 {
+  --radius: 20px;
+  background-image: none;
+  margin: 0 auto;
+}
+
+.u-section-1 .u-text-2 {
+  font-size: 1.625rem;
+  margin: -70px auto 0 -156px;
+}
+
+.u-section-1 .u-line-1 {
+  transform-origin: left center;
+  width: 1489px;
+  margin: 40px -175px 60px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-text-1 {
+    font-size: 3.75rem;
+  }
+
+  .u-section-1 .u-list-1 {
+    margin-top: 22px;
+  }
+
+  .u-section-1 .u-text-2 {
+    margin-top: -63px;
+  }
+
+  .u-section-1 .u-line-1 {
+    width: 940px;
+    margin-top: 36px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-repeater-1 {
+    grid-auto-columns: calc(50% - 2.5px);
+    grid-template-columns: repeat(2, calc(50% - 2.5px));
+    min-height: 239px;
+  }
+
+  .u-section-1 .u-text-2 {
+    margin-top: -272px;
+  }
+
+  .u-section-1 .u-line-1 {
+    width: 720px;
+    margin-top: 245px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-text-1 {
+    font-size: 3rem;
+  }
+
+  .u-section-1 .u-list-1 {
+    margin-top: 16px;
+    margin-left: 125px;
+  }
+
+  .u-section-1 .u-repeater-1 {
+    grid-auto-columns: calc(100% - 0px);
+    grid-template-columns: 100%;
+  }
+
+  .u-section-1 .u-text-2 {
+    font-size: 1rem;
+    margin-top: -268px;
+  }
+
+  .u-section-1 .u-line-1 {
+    width: 540px;
+    margin-top: 247px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-text-1 {
+    font-size: 2.25rem;
+  }
+
+  .u-section-1 .u-list-1 {
+    width: 340px;
+    margin-left: 0;
+  }
+
+  .u-section-1 .u-repeater-1 {
+    grid-auto-columns: 100%;
+  }
+
+  .u-section-1 .u-line-1 {
+    width: 340px;
+  }
+}
+
+#restaurant-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto; /* 將容器置中 */
+  width: fit-content; /* 調整寬度以適應內容 */
+  font-family: "Noto Serif TC", serif;
+}
+
+#restaurant-list li {
+  padding: 10px;
+  margin: 5px 0;
+  color: #624a42;
+  border-radius: 5px;
+  text-align: center; /* 選項文字置中 */
+}
+
