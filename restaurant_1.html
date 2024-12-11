@@ -168,24 +168,48 @@ c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,24
         </div>
       </div>
     </section>
-    <section class="u-clearfix u-section-2" id="sec-073f">
+  <section class="u-clearfix u-section-2" id="sec-073f">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h1 class="u-text u-text-custom-color-2 u-text-default u-text-1">評論</h1>
-        <div class="custom-expanded u-align-center u-border-4 u-border-custom-color-2 u-line u-line-horizontal u-line-1"></div>
-        <img class="u-image u-image-contain u-image-default u-image-1" src="images/2024-12-10084141.png" alt="" data-image-width="301" data-image-height="205">
-        <div class="custom-expanded u-clearfix u-custom-html u-custom-html-1">
-          <form style="display: flex; align-items: center; gap: 10px;">
-            <label for="name">name:</label>
-            <input type="text" id="name" name="name">
-            <label for="comment">comment:</label>
-            <input type="text" id="comment" name="comment">
-            <label for="rating">rating (1~5):</label>
-            <input type="number" id="rating" name="rating" min="1" max="5">
-            <button type="submit">Submit</button>
-          </form>
-        </div>
+          <h1 class="u-text u-text-custom-color-2 u-text-default u-text-1"> 本官嘗過覺得...</h1>
+          <div class="custom-expanded u-align-center u-border-4 u-border-custom-color-2 u-line u-line-horizontal u-line-1"></div>
+          <div class="data-layout-selected u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+              <div class="u-layout">
+                  <div class="u-layout-row">
+                      <div class="u-container-style u-layout-cell u-size-12 u-size-20-md u-layout-cell-1">
+                          <div class="u-container-layout u-valign-top u-container-layout-1">
+                              <img class="u-expanded-width u-image u-image-contain u-image-2" src="images/segment_1.png" data-image-width="675" data-image-height="695" onclick="">
+                              <p class="u-text u-text-default u-text-2" id="1"></p>
+                          </div>
+                      </div>
+                      <div class="u-container-style u-layout-cell u-size-12 u-size-20-md u-layout-cell-2">
+                          <div class="u-container-layout u-valign-top u-container-layout-2">
+                              <img class="u-expanded-width u-image u-image-contain u-image-default u-image-3" src="images/segment_2.png" alt="" data-image-width="729" data-image-height="823">
+                              <p class="u-text u-text-default u-text-3" id="2"></p>
+                          </div>
+                      </div>
+                      <div class="u-container-style u-layout-cell u-size-12 u-size-20-md u-layout-cell-3">
+                          <div class="u-container-layout u-valign-top u-container-layout-3">
+                              <img class="u-expanded-width u-image u-image-contain u-image-default u-image-4" src="images/segment_3.png" alt="" data-image-width="735" data-image-height="812">
+                              <p class="u-text u-text-default u-text-4" id="3"></p>
+                          </div>
+                      </div>
+                      <div class="u-container-style u-layout-cell u-size-12 u-size-30-md u-layout-cell-4">
+                          <div class="u-container-layout u-valign-top u-container-layout-4">
+                              <img class="u-expanded-width u-image u-image-contain u-image-default u-image-5" src="images/segment_4.png" alt="" data-image-width="749" data-image-height="836">
+                              <p class="u-text u-text-default u-text-5" id="4"></p>
+                          </div>
+                      </div>
+                      <div class="u-container-style u-layout-cell u-size-12 u-size-30-md u-layout-cell-5">
+                          <div class="u-container-layout u-valign-top u-container-layout-5">
+                              <img class="u-expanded-width u-image u-image-contain u-image-default u-image-6" src="images/segment_5.png" alt="" data-image-width="762" data-image-height="843">
+                              <p class="u-text u-text-default u-text-6" id="5"></p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
-    </section>
+  </section>
     
     
     
@@ -238,6 +262,47 @@ l-3.7-5.1L35.7,33.1h8.1l12.3,17.2l3.7,5.1l16.6,23.4h-7.8L55.3,60.2z"></path></sv
               .catch(error => console.error('Error fetching the number:', error));
       }
 
+      function fetchAndUpdate1(restaurantId) {
+          fetch(`http://localhost:3000/get1?restaurantId=${restaurantId}`) // Send the restaurantId as a query parameter
+              .then(response => response.json())
+              .then(data => {
+                  document.getElementById('1').textContent = data.number; // Update the number
+              })
+              .catch(error => console.error('Error fetching the number:', error));
+      }
+      function fetchAndUpdate2(restaurantId) {
+          fetch(`http://localhost:3000/get1?restaurantId=${restaurantId}`) // Send the restaurantId as a query parameter
+              .then(response => response.json())
+              .then(data => {
+                  document.getElementById('2').textContent = data.number; // Update the number
+              })
+              .catch(error => console.error('Error fetching the number:', error));
+      }
+      function fetchAndUpdate3(restaurantId) {
+          fetch(`http://localhost:3000/get1?restaurantId=${restaurantId}`) // Send the restaurantId as a query parameter
+              .then(response => response.json())
+              .then(data => {
+                  document.getElementById('3').textContent = data.number; // Update the number
+              })
+              .catch(error => console.error('Error fetching the number:', error));
+      }
+      function fetchAndUpdate4(restaurantId) {
+          fetch(`http://localhost:3000/get1?restaurantId=${restaurantId}`) // Send the restaurantId as a query parameter
+              .then(response => response.json())
+              .then(data => {
+                  document.getElementById('4').textContent = data.number; // Update the number
+              })
+              .catch(error => console.error('Error fetching the number:', error));
+      }
+      function fetchAndUpdate5(restaurantId) {
+          fetch(`http://localhost:3000/get1?restaurantId=${restaurantId}`) // Send the restaurantId as a query parameter
+              .then(response => response.json())
+              .then(data => {
+                  document.getElementById('5').textContent = data.number; // Update the number
+              })
+              .catch(error => console.error('Error fetching the number:', error));
+      }
+
       // Add click event listener to the button
       document.getElementById('dynamic-button').addEventListener('click', (event) => {
           event.preventDefault(); // Prevent default behavior
@@ -274,10 +339,150 @@ l-3.7-5.1L35.7,33.1h8.1l12.3,17.2l3.7,5.1l16.6,23.4h-7.8L55.3,60.2z"></path></sv
           }
       }
 
+      async function rate1(restaurantId) {
+          if (!restaurantId) {
+              console.error("Restaurant ID is required.");
+              return;
+          }
 
+          try {
+              // Send a POST request to the backend API
+              const response = await fetch('http://localhost:3000/restaurants/rate1', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({ id: restaurantId }),
+              });
+
+              if (response.ok) {
+                  const result = await response.json();
+                  console.log('Restaurant rated successfully:', result);
+              } else {
+                  const errorMessage = await response.text();
+                  console.error('Error rating restaurant:', errorMessage);
+              }
+          } catch (error) {
+              console.error('An error occurred while liking the restaurant:', error);
+          }
+      }
+      async function rate2(restaurantId) {
+          if (!restaurantId) {
+              console.error("Restaurant ID is required.");
+              return;
+          }
+
+          try {
+              // Send a POST request to the backend API
+              const response = await fetch('http://localhost:3000/restaurants/rate2', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({ id: restaurantId }),
+              });
+
+              if (response.ok) {
+                  const result = await response.json();
+                  console.log('Restaurant rated successfully:', result);
+              } else {
+                  const errorMessage = await response.text();
+                  console.error('Error rating restaurant:', errorMessage);
+              }
+          } catch (error) {
+              console.error('An error occurred while liking the restaurant:', error);
+          }
+      }
+      async function rate3(restaurantId) {
+          if (!restaurantId) {
+              console.error("Restaurant ID is required.");
+              return;
+          }
+
+          try {
+              // Send a POST request to the backend API
+              const response = await fetch('http://localhost:3000/restaurants/rate3', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({ id: restaurantId }),
+              });
+
+              if (response.ok) {
+                  const result = await response.json();
+                  console.log('Restaurant rated successfully:', result);
+              } else {
+                  const errorMessage = await response.text();
+                  console.error('Error rating restaurant:', errorMessage);
+              }
+          } catch (error) {
+              console.error('An error occurred while liking the restaurant:', error);
+          }
+      }
+      async function rate44(restaurantId) {
+          if (!restaurantId) {
+              console.error("Restaurant ID is required.");
+              return;
+          }
+
+          try {
+              // Send a POST request to the backend API
+              const response = await fetch('http://localhost:3000/restaurants/rate4', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({ id: restaurantId }),
+              });
+
+              if (response.ok) {
+                  const result = await response.json();
+                  console.log('Restaurant rated successfully:', result);
+              } else {
+                  const errorMessage = await response.text();
+                  console.error('Error rating restaurant:', errorMessage);
+              }
+          } catch (error) {
+              console.error('An error occurred while liking the restaurant:', error);
+          }
+      }
+
+      async function rate5(restaurantId) {
+          if (!restaurantId) {
+              console.error("Restaurant ID is required.");
+              return;
+          }
+
+          try {
+              // Send a POST request to the backend API
+              const response = await fetch('http://localhost:3000/restaurants/rate5', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({ id: restaurantId }),
+              });
+
+              if (response.ok) {
+                  const result = await response.json();
+                  console.log('Restaurant rated successfully:', result);
+              } else {
+                  const errorMessage = await response.text();
+                  console.error('Error rating restaurant:', errorMessage);
+              }
+          } catch (error) {
+              console.error('An error occurred while liking the restaurant:', error);
+          }
+      }
       // Initial fetch to load the number when the page loads
       const initialRestaurantId = document.getElementById('dynamic-button').getAttribute('data-restaurant-id');
       fetchAndUpdateNumber(initialRestaurantId);
+      fetchAndUpdate1(initialRestaurantId);
+      fetchAndUpdate2(initialRestaurantId);
+      fetchAndUpdate3(initialRestaurantId);
+      fetchAndUpdate4(initialRestaurantId);
+      fetchAndUpdate5(initialRestaurantId);
 
   </script>
   

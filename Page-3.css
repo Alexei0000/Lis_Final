@@ -7,19 +7,20 @@
   margin: 18px auto 0 -175px;
 }
 
-.u-section-1 .u-list-1 {
+.u-section-1 {
   width: 206px;
-  margin: 31px auto 0 251px;
+  margin: 31px auto 0 300px;
 }
-
+.u-list.u-list-1 {
+  transform: translateX(1000px) !important;/* Adjust the value as needed */
+}
 .u-section-1 .u-repeater-1 {
   grid-auto-columns: calc(50% - 2.5px);
   grid-template-columns: repeat(2, calc(50% - 2.5px));
   min-height: 57px;
   grid-gap: 5px;
-  position: relative;
-  left: 226px;
-  margin-left: 0px;
+  left: 400px;
+  margin-left: 200px;
 }
 
 .u-section-1 .u-list-item-1 {
@@ -128,7 +129,7 @@
   }
 
   .u-section-1 .u-list-1 {
-    margin-left: 134px;
+    margin-left: 300px;
   }
 
   .u-section-1 .u-line-1 {

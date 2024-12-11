@@ -14,8 +14,8 @@
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 7.1.0, nicepage.com">
 
-    
-    
+
+
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
@@ -86,17 +86,17 @@
           <div class="u-repeater u-repeater-1">
             <div class="u-container-style u-list-item u-radius u-repeater-item u-shape-round u-list-item-1">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
-                <a href="" class="u-active-custom-color-2 u-btn u-btn-round u-button-style u-custom-color-1 u-custom-item u-radius u-text-active-custom-color-1 u-text-custom-color-2 u-btn-1"> 健康餐盒</a>
+                <a href="javascript:void(0);" class="u-active-custom-color-2 u-btn u-btn-round u-button-style u-custom-color-1 u-custom-item u-radius u-text-active-custom-color-1 u-text-custom-color-2 u-btn-1" onclick = "getRestaurant('健康餐盒')"> 健康餐盒</a>
               </div>
             </div>
             <div class="u-container-style u-list-item u-radius u-repeater-item u-shape-round u-list-item-2">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-2">
-                <a href="" class="u-active-custom-color-2 u-btn u-btn-round u-button-style u-custom-color-1 u-custom-item u-radius u-text-active-custom-color-1 u-text-custom-color-2 u-btn-2"> 台式便當</a>
+                <a href="javascript:void(0);" class="u-active-custom-color-2 u-btn u-btn-round u-button-style u-custom-color-1 u-custom-item u-radius u-text-active-custom-color-1 u-text-custom-color-2 u-btn-2" onclick = "getRestaurant('台式便當')"> 台式便當</a>
               </div>
             </div>
             <div class="u-container-style u-list-item u-radius u-repeater-item u-shape-round u-list-item-3">
               <div class="u-container-layout u-similar-container u-valign-top u-container-layout-3">
-                <a href="" class="u-active-custom-color-2 u-btn u-btn-round u-button-style u-custom-color-1 u-custom-item u-radius u-text-active-custom-color-1 u-text-custom-color-2 u-btn-3"> 小吃店</a>
+                <a href="javascript:void(0);" class="u-active-custom-color-2 u-btn u-btn-round u-button-style u-custom-color-1 u-custom-item u-radius u-text-active-custom-color-1 u-text-custom-color-2 u-btn-3" onclick = "getRestaurant('小吃店')"> 小吃店</a>
               </div>
             </div>
           </div>
@@ -106,9 +106,9 @@
         <div class="custom-expanded u-align-center u-border-3 u-border-custom-color-2 u-line u-line-horizontal u-line-1"></div>
       </div>
     </section>
-    
-    
-    
+
+  <ul id="restaurant-list"></ul>
+
     <footer class="u-align-center u-clearfix u-container-align-center u-custom-color-1 u-footer u-footer" id="sec-6526"><div class="u-clearfix u-sheet u-sheet-1">
         <img class="custom-expanded u-image u-image-default u-image-1" src="images/2024-12-08103731.png" alt="" data-image-width="973" data-image-height="804">
         <p class="u-align-left u-small-text u-text u-text-variant u-text-1"> 社畜的躺平天堂 <br>週一到週五，聚餐到團購，多樣的選擇，溫暖你的身心靈
@@ -147,5 +147,115 @@ l-3.7-5.1L35.7,33.1h8.1l12.3,17.2l3.7,5.1l16.6,23.4h-7.8L55.3,60.2z"></path></sv
         </div>
         <p class="u-align-center u-text u-text-3"> 本網站支援Edge、google chrome、Firefox與safari瀏覽器     最佳解析度：1920*1080</p>
       </div></footer>
+  <script>
+      // Function to fetch and display restaurants
+      async function loadRestaurants(day) {
+          try {
+              // Include the day parameter in the query string
+              const response = await fetch(`http://localhost:3000/restaurants?day=${day}`);
+              if (!response.ok) {
+                  throw new Error('Failed to fetch restaurant data');
+              }
+              const restaurants = await response.json();
+              const restaurantList = document.getElementById('restaurant-list');
 
+              // Clear the list before rendering new data
+              restaurantList.innerHTML = '';
+
+              // Render restaurants as a list
+              restaurants.sort((a, b) => b.r_likes - a.r_likes);
+
+              restaurants.forEach((restaurant, index) => {
+                  const li = document.createElement('li');
+                  const icon = document.createElement('span'); // Icon or number holder
+                  const text = document.createTextNode(` ${restaurant.r_name} - ${restaurant.r_likes} likes`);
+
+                  // Add icons or numbers based on the rank
+                  if (index === 0) {
+                      icon.textContent = '🏆'; // First place icon
+                  } else if (index === 1) {
+                      icon.textContent = '🥈'; // Second place icon
+                  } else if (index === 2) {
+                      icon.textContent = '🥉'; // Third place icon
+                  } else {
+                      icon.textContent = `${index + 1}.`; // Number for the rest
+                  }
+
+                  li.appendChild(icon);
+                  li.appendChild(text);
+
+                  // Make the list item clickable
+                  li.addEventListener('click', () => {
+                      // For example, navigate to a new page or show more details
+                      window.location.href = `restaurant_${restaurant.r_id}.html`
+                      // Alternatively, you can navigate to a new page or display restaurant details:
+                      // window.location.href = `/restaurant/${restaurant.id}`;
+                  });
+
+                  restaurantList.appendChild(li);
+              });
+          } catch (error) {
+              console.error('Error:', error);
+          }
+      }
+
+
+      async function getRestaurant(type) {
+          try {
+              const response = await fetch(`http://localhost:3000/restaurants/type?type=${type}`);
+              if (!response.ok) {
+                  throw new Error('Failed to fetch restaurant data');
+              }
+              const restaurants = await response.json();
+              const restaurantList = document.getElementById('restaurant-list');
+
+              // Clear the list before rendering new data
+              restaurantList.innerHTML = '';
+
+              // Sort restaurants by likes in descending order
+              restaurants.sort((a, b) => b.r_likes - a.r_likes);
+
+              // Render restaurants as a list
+              restaurants.forEach((restaurant, index) => {
+                  const li = document.createElement('li');
+                  const icon = document.createElement('span'); // Icon or number holder
+                  const text = document.createTextNode(` ${restaurant.r_name} - ${restaurant.r_likes} likes`);
+
+                  // Add icons or numbers based on the rank
+                  if (index === 0) {
+                      icon.textContent = '🏆'; // First place icon
+                  } else if (index === 1) {
+                      icon.textContent = '🥈'; // Second place icon
+                  } else if (index === 2) {
+                      icon.textContent = '🥉'; // Third place icon
+                  } else {
+                      icon.textContent = `${index + 1}.`; // Number for the rest
+                  }
+
+                  li.appendChild(icon);
+                  li.appendChild(text);
+
+                  // Make the list item clickable
+                  li.addEventListener('click', () => {
+                      // For example, navigate to a new page or show more details
+                      window.location.href = `restaurant_${restaurant.r_id}.html`
+                      // Alternatively, you can navigate to a new page or display restaurant details:
+                      // window.location.href = `/restaurant/${restaurant.id}`;
+                  });
+
+                  restaurantList.appendChild(li);
+              });
+          } catch (error) {
+              console.error('Error:', error);
+          }
+      }
+
+
+      // Call the function on page load
+      document.addEventListener('DOMContentLoaded', () => {
+          console.log("DOMContentLoaded fired");
+          loadRestaurants(4);
+      });
+
+  </script>
 </body></html>

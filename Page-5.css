@@ -162,3 +162,15 @@
     width: 340px;
   }
 }
+
+#restaurant-list li {
+  padding: 10px;
+  margin: 5px 0;
+  color: #624a42;
+  border-radius: 5px;
+  text-align: left; /* 選項文字置中 */
+  font-size: 55px;
+  transform: translate(550px, -150px);
+  overflow: auto;
+  box-sizing: border-box;
+}
