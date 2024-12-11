@@ -180,19 +180,30 @@ body {
   }
 }
 
-#restaurant-list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0 auto; /* 將容器置中 */
-  width: fit-content; /* 調整寬度以適應內容 */
-  font-family: "Noto Serif TC", serif;
-}
+/*#restaurant-list {*/
+/*  list-style-type: none;*/
+/*  margin: 0 auto; !* 將容器置中 *!*/
+/*  width: fit-content; !* 調整寬度以適應內容 *!*/
+/*  font-family: "Noto Serif TC", serif;*/
+/*  box-sizing: border-box;*/
+/*  padding: 10px;*/
+/*  color: #624a42;*/
+/*  border-radius: 5px;*/
+/*  text-align: left; !* 選項文字置中 *!*/
+/*  font-size: 55px;*/
+/*  transform: translate(-100px, -150px);*/
+/*  overflow: auto;*/
+/*}*/
 
 #restaurant-list li {
   padding: 10px;
   margin: 5px 0;
   color: #624a42;
   border-radius: 5px;
-  text-align: center; /* 選項文字置中 */
+  text-align: left; /* 選項文字置中 */
+  font-size: 55px;
+  transform: translate(550px, -150px);
+  overflow: auto;
+  box-sizing: border-box;
 }
 
